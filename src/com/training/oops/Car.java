@@ -56,5 +56,9 @@ public class Car {
 		System.out.println(car.model);
 		System.out.println(car.speed);
 //		System.out.println(car.type);
+
+		Car car2;
+		car2 = car;
+		System.out.println(car2);
 	}
 }

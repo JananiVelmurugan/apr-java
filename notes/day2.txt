@@ -39,10 +39,18 @@ Object Oriented Programming
 >> template for defining properties & behaviour for any real world objects
 > object
 >> instance of a class
->> inistance variables, instance methods 
-> inheritance
-> abstraction
-> encapsulation
--------------------------------------------------
-this keyword
-Method Overloading 
+>> inistance variables, instance methods
+------------------------------------------------------- 
+Method Overloading - NOT 
+> N - number of parameters
+> O - Order of parameters
+> T - type of parameters
+----------------------------------------------------------
+> encapsulation 
+>> private variables & public methods
+>> hide the data from the outside world
+--------------------------------------------------
+> this keyword
+>> ambiguity between instance variable & local varaible
+>> represents instance variable
+----------------------------------------------------
