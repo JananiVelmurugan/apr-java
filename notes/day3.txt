@@ -1,0 +1,25 @@
+getter vs setter
+toString()
+constructors
+> initialize properties
+> special method & it must not have return type
+> automatically called during object creation
+Overloading - NOT
+> in same class or in a class hierarchy
+Overriding 
+> in a class hierarchy
+constructor call - this()
+final 
+> creating constants
+> must be initialized
+> cannot be reinitialized
+Arrays
+> declaration
+> initialization
+> passing an array to method
+Polymorphism
+> compile time - overloading 
+> run time - overriding
+Inheritance
+> reusability
+> one of the core OOPs
