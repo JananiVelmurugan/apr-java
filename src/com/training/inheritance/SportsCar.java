@@ -4,6 +4,13 @@ import com.training.methods.Car;
 
 public class SportsCar extends Car{
 	
+	public SportsCar(String model, int speed ) {
+		super(model,speed);
+	}
+
+	public SportsCar() {
+	}
+
 	public void drive() {
 		System.out.println("I am driving sports car");
 	}

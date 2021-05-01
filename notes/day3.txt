@@ -8,7 +8,8 @@ Overloading - NOT
 > in same class or in a class hierarchy
 Overriding 
 > in a class hierarchy
-constructor call - this()
+constructor call in a same class - this()
+constructor call in a class hierarchy - super()
 final 
 > creating constants
 > must be initialized
@@ -18,8 +19,20 @@ Arrays
 > initialization
 > passing an array to method
 Polymorphism
-> compile time - overloading 
-> run time - overriding
+> compiletime - overloading 
+> runtime - overriding
 Inheritance
 > reusability
 > one of the core OOPs
+final
+> class - cannot have a sub class/derived class/ child class
+> property - cannot change values
+> method - cannot be overriden
+Package
+> public
+> protected
+> default/no modifier/package private
+> private
+Exercise
+> Employee, EmployeeTest, Manager, Developer
+> Implement encapsulation,constructor,toString,arrays,inheritance,access modifiers
