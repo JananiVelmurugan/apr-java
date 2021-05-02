@@ -19,3 +19,19 @@ child		extends		implements
 instance	no			no
 methods		any access	public abstract
 ======================================================
+Collection - interface
+Collections - class
+java.util
+			Array					Collection
+store		primitive/objects		objects
+operations	complex					simple
+nature		static					dynamic
+
+> ArrayList - duplicate values
+> HashSet - unique values
+> HashMap - <key,value> pair - key must be unique 
+========================================================
+Generics
+> type safety collection
+> reduce the type conversion
+=====================================================
