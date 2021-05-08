@@ -10,3 +10,7 @@ exception
 > two types
 	> runtime exception(unchecked exception) - NullPointerException, ArithmeticException,ArrayIndexOutOfBoundsException
 	> compiletime exception(checked exception) - IOException,SQLException
+> user defined exception 
+===================================================================
+hashcode() vs equals()
+> java.lang.Object 
