@@ -1,0 +1,12 @@
+composition
+> relationship between two objects
+ex: 
+car has parts
+employee works for department
+==============================================================
+exception
+> java.lang
+> Object -> throwable -> exception 
+> two types
+	> runtime exception(unchecked exception) - NullPointerException, ArithmeticException,ArrayIndexOutOfBoundsException
+	> compiletime exception(checked exception) - IOException,SQLException
