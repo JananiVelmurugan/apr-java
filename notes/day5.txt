@@ -13,4 +13,12 @@ exception
 > user defined exception 
 ===================================================================
 hashcode() vs equals()
-> java.lang.Object 
+> java.lang.Object
+====================================================================
+Core Java Project Using Collection 
+Layered Architecture
+> extensible
+> maintainable
+> debug
+CRUD App
+> Create Read Update Delete
