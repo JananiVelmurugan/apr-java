@@ -1,33 +1,46 @@
 package com.training.carapp.service;
 
-import java.util.Map;
+import java.util.List;
 
+import com.training.carapp.dao.CarDAO;
 import com.training.carapp.exception.CarNotFoundException;
 import com.training.carapp.model.Car;
-import com.training.carapp.repository.CarRepository;
 
 public class CarService {
 
-	private CarRepository carRepository;
+//	private CarRepository carRepository;
+	private CarDAO carDao;
 
 	public CarService() {
-		carRepository = new CarRepository();
+		// carRepository = new CarRepository();
+		carDao = new CarDAO();
 	}
 
 	public void createCar(Car car) {
-		carRepository.add(car);
+		// carRepository.add(car);
+		carDao.add(car);
 	}
 
-//	public Set<Car> findAllCars() {
+	public List<Car> findAllCars() {
+//		return carRepository.findAll();
+		return carDao.findAll();
+	}
+
+//	public Map<Integer, Car> findAllCars() {
 //		return carRepository.findAll();
 //	}
+//
+//	public Car findCarById(int id) throws CarNotFoundException {
+//		Car car = carRepository.findById(id);
+//		if (car == null) {
+//			throw new CarNotFoundException("Car is not found");
+//		} else {
+//			return car;
+//		}
+//	}
 
-	public Map<Integer, Car> findAllCars() {
-		return carRepository.findAll();
-	}
-
-	public Car findCarById(int id) throws CarNotFoundException {
-		Car car = carRepository.findById(id);
+	public Car findCarByModel(String model) throws CarNotFoundException {
+		Car car = carDao.findByModel(model);
 		if (car == null) {
 			throw new CarNotFoundException("Car is not found");
 		} else {
@@ -35,11 +48,14 @@ public class CarService {
 		}
 	}
 
-	public void updateCar(int id, Car car) {
-		carRepository.update(id, car);
+	public void updateCar(Car car) {
+//		carRepository.update(id, car);
+		carDao.update(car);
 	}
 
-	public void deleteCar(int id) {
-		carRepository.delete(id);
+//
+	public void deleteCar(String model) {
+//		carRepository.delete(id);
+		carDao.delete(model);
 	}
 }

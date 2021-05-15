@@ -17,29 +17,31 @@ public class CarCRUD {
 
 			// step3 create the statement object
 			Statement stmt = con.createStatement();
-
+			int insertResult;
+			int updateResult;
+			int deleteResult;
+			ResultSet rs ;
 			// step4 execute query
-			ResultSet rs = stmt.executeQuery("select * from CARS");
-			while (rs.next())
-				System.out.println(rs.getInt(1) + "  " + rs.getString(2));
-
-			int insertResult = stmt.executeUpdate("insert into CARS values(4,'KIA')");
-			int updateResult = stmt.executeUpdate("update CARS set name='Audi A8' where id=3");
-			int deleteResult = stmt.executeUpdate("delete from CARS where id=2");
-
-			System.out.println(insertResult + " records inserted");
-			System.out.println(updateResult + " records updated");
-			System.out.println(deleteResult + " records deleted");
-
-			rs = stmt.executeQuery("select * from CARS order by id");
-			while (rs.next())
-				System.out.println(rs.getInt(1) + "  " + rs.getString(2));
+//			rs = stmt.executeQuery("select * from CARS");
+//			while (rs.next())
+//				System.out.println(rs.getInt(1) + "  " + rs.getString(2));
+//
+//			insertResult = stmt.executeUpdate("insert into CARS values(4,'KIA')");
+//			updateResult = stmt.executeUpdate("update CARS set name='Audi A8' where id=3");
+//			deleteResult = stmt.executeUpdate("delete from CARS where id=2");
+//
+//			System.out.println(insertResult + " records inserted");
+//			System.out.println(updateResult + " records updated");
+//			System.out.println(deleteResult + " records deleted");
+//
+//			rs = stmt.executeQuery("select * from CARS order by name");
+//			while (rs.next())
+//				System.out.println(rs.getInt(1) + "  " + rs.getString(2));
 
 			System.out.println("========================================");
 			PreparedStatement pstmt = con.prepareStatement("insert into CARS values(?,?)");
 			pstmt.setInt(1, 101);// 1 specifies the first parameter in the query
 			pstmt.setString(2, "NANO");
-
 			insertResult = pstmt.executeUpdate();
 			System.out.println(insertResult + " records inserted");
 
@@ -60,6 +62,8 @@ public class CarCRUD {
 				System.out.println(rs.getInt(1) + " " + rs.getString(2));
 			}
 
+			pstmt.close();
+			stmt.close();
 			// step5 close the connection object
 			con.close();
 

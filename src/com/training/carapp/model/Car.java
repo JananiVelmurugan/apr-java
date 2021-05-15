@@ -14,7 +14,11 @@ public class Car {
 		this.model = model;
 		this.speed = speed;
 	}
-
+	public Car(int speed, String model) {
+		super();
+		this.model = model;
+		this.speed = speed;
+	}
 	public String getModel() {
 		return model;
 	}
