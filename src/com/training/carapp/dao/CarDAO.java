@@ -1,10 +1,15 @@
 package com.training.carapp.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +27,25 @@ public class CarDAO {
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
+	}
+
+	public void add() {
+		int insertResult;
+		String date = "6/4/1988";
+		String dateTime = "6/4/1988 23:30";
+		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("M/d/yyyy");
+		DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("M/d/yyyy H:m");
+		try {
+			pstmt = con.prepareStatement("insert into dummy values(?,?,?)");
+			pstmt.setInt(1, 1);
+			pstmt.setDate(2, Date.valueOf(LocalDate.parse(date,dateFormat)));
+			pstmt.setTimestamp(3, Timestamp.valueOf(LocalDateTime.parse(dateTime,dateTimeFormat)));
+			insertResult = pstmt.executeUpdate();
+			System.out.println(insertResult + " records inserted");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	public void add(Car car) {
@@ -95,6 +119,12 @@ public class CarDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static void main(String[] args) {
+		CarDAO dao = new CarDAO();
+		dao.add();
+		
 	}
 
 }

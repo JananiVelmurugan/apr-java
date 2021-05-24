@@ -8,7 +8,15 @@ public class SportsCar extends Car {
 	}
 
 	@Override
-	void drive() {
-		System.out.println("I am driving a sports car");
+	void stop() {
+		System.out.println("I am stopping a sports car");
 	}
+	
+
+	void drive() {
+		System.out.println("I am driving a sport car");
+	}
+	
+	
+
 }
