@@ -31,14 +31,18 @@ public class CarDAO {
 
 	public void add() {
 		int insertResult;
-		String date = "6/4/1988";
-		String dateTime = "6/4/1988 23:30";
+		String date = "6/5/1988";
+		String dateTime = "6/5/1988 13:30";
 		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("M/d/yyyy");
 		DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("M/d/yyyy H:m");
 		try {
 			pstmt = con.prepareStatement("insert into dummy values(?,?,?)");
 			pstmt.setInt(1, 1);
+			// LocalDate.parse - convert java string to java LocalDate
+			// Date.valueOf - convert java LocalDate to sql Date
 			pstmt.setDate(2, Date.valueOf(LocalDate.parse(date,dateFormat)));
+			// LocalDateTime.parse - convert java string to java LocalDateTime
+			// Timestamp.valueOf - convert java LocalDateTime to sql Timestamp
 			pstmt.setTimestamp(3, Timestamp.valueOf(LocalDateTime.parse(dateTime,dateTimeFormat)));
 			insertResult = pstmt.executeUpdate();
 			System.out.println(insertResult + " records inserted");

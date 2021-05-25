@@ -1,5 +1,6 @@
 package com.training.oops;
 
+// Overloading
 public class MethodDemo {
 
 	public void print() {
@@ -32,6 +33,7 @@ public class MethodDemo {
 		Car c = new Car();
 		demo.print(c);
 		demo.print("Lion","Bridge");
+		
 	}
 
 }

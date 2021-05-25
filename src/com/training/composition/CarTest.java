@@ -12,6 +12,11 @@ public class CarTest {
 		part.setId(100);
 		part.setName("alloy wheel");
 		car.setPart(part);
+		
+		Car audi = new Car();
+		car.setModel("A3");
+		car.setSpeed(300);
+		car.setPart(part);
 
 		System.out.println(car);
 
