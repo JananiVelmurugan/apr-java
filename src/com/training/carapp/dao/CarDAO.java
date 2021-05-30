@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import com.training.carapp.model.Car;
 
@@ -82,10 +83,10 @@ public class CarDAO {
 
 	}
 
-	public Car findByModel(String model) {
+	public Optional<Car> findByModel(String model) {
 		Car car = null;
 		try {
-			pstmt = con.prepareStatement("select * from CARS where model=?");
+			pstmt = con.prepareStatement("select * from CARS where name=?");
 			pstmt.setString(1, model);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
@@ -95,7 +96,9 @@ public class CarDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return car;
+		
+//		return car;
+		return Optional.ofNullable(car);
 	}
 
 	public void update(Car car) {

@@ -1,6 +1,7 @@
 package com.training.carapp.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.training.carapp.dao.CarDAO;
 import com.training.carapp.exception.CarNotFoundException;
@@ -40,12 +41,15 @@ public class CarService {
 //	}
 
 	public Car findCarByModel(String model) throws CarNotFoundException {
-		Car car = carDao.findByModel(model);
-		if (car == null) {
-			throw new CarNotFoundException("Car is not found");
-		} else {
-			return car;
-		}
+//		Car car = carDao.findByModel(model);
+//		if (car == null) {
+//			throw new CarNotFoundException("Car is not found");
+//		} else {
+//			return car;
+//		}
+
+		Optional<Car> car = carDao.findByModel(model);
+		return car.orElseThrow(() -> new CarNotFoundException("Car is not found"));
 	}
 
 	public void updateCar(Car car) {
